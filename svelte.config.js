@@ -1,14 +1,10 @@
 import preprocess from "svelte-preprocess";
-import adapter from "@sveltejs/adapter-static";
+import adapter from "@sveltejs/adapter-auto";
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
   kit: {
-    // Note: Your `adapter` configuration may need customizations depending
-    // on how you are building and deploying your application.
-    adapter: adapter({
-      fallback: "index.html",
-    }),
+    adapter: adapter(),
   },
   preprocess: [
     preprocess({
