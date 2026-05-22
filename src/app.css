@@ -1,0 +1,219 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+/* App-level tweaks on top of Bootstrap */
+:root {
+	--bp-bg: linear-gradient(135deg, #0d1b2a 0%, #1b263b 45%, #2a4365 100%);
+	--bp-accent: #7c3aed;
+}
+
+body {
+	background: var(--bp-bg);
+	min-height: 100vh;
+	color: #e2e8f0;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.bp-hero {
+	background: radial-gradient(circle at top right, rgba(124, 58, 237, 0.35), transparent 60%),
+		radial-gradient(circle at bottom left, rgba(56, 189, 248, 0.25), transparent 55%);
+	border-radius: 1.25rem;
+	padding: 3rem 2rem;
+	margin-bottom: 2rem;
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	backdrop-filter: blur(8px);
+}
+
+.bp-card {
+	background: rgba(15, 23, 42, 0.7);
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	border-radius: 1rem;
+	color: #e2e8f0;
+	transition: border-color 0.2s ease, transform 0.15s ease;
+}
+.bp-card:hover {
+	border-color: rgba(124, 58, 237, 0.5);
+}
+
+.bp-card .card-header {
+	background: transparent;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	font-weight: 600;
+}
+
+.bp-icon {
+	width: 2.25rem;
+	height: 2.25rem;
+	border-radius: 0.6rem;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.1rem;
+	background: linear-gradient(135deg, rgba(124, 58, 237, 0.25), rgba(56, 189, 248, 0.25));
+	color: #fff;
+	border: 1px solid rgba(124, 58, 237, 0.35);
+}
+
+.bp-card .form-control,
+.bp-card .form-control:focus {
+	background: rgba(255, 255, 255, 0.04);
+	color: #f1f5f9;
+	border-color: rgba(255, 255, 255, 0.12);
+}
+.bp-card .form-control:focus {
+	border-color: rgba(124, 58, 237, 0.6);
+	box-shadow: 0 0 0 0.25rem rgba(124, 58, 237, 0.2);
+}
+.bp-card .form-text {
+	color: rgba(226, 232, 240, 0.6);
+}
+
+.bp-mono {
+	font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+	font-size: 0.8rem;
+	word-break: break-all;
+}
+
+.bp-key-box {
+	background: rgba(255, 255, 255, 0.05);
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	border-radius: 0.5rem;
+	padding: 0.5rem 0.75rem;
+}
+
+.btn-bp-primary {
+	background: linear-gradient(135deg, #7c3aed, #4f46e5);
+	border: none;
+	color: #fff;
+	font-weight: 500;
+}
+.btn-bp-primary:hover,
+.btn-bp-primary:focus {
+	background: linear-gradient(135deg, #6d28d9, #4338ca);
+	color: #fff;
+}
+.btn-bp-primary:disabled {
+	opacity: 0.6;
+}
+
+.btn-bp-outline {
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	color: #e2e8f0;
+	background: transparent;
+}
+.btn-bp-outline:hover {
+	border-color: rgba(124, 58, 237, 0.6);
+	color: #fff;
+}
+
+.bp-balance-tile {
+	background: rgba(124, 58, 237, 0.08);
+	border: 1px solid rgba(124, 58, 237, 0.25);
+	border-radius: 0.75rem;
+	padding: 1rem 1.25rem;
+}
+.bp-balance-tile .label {
+	font-size: 0.75rem;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+	color: rgba(226, 232, 240, 0.7);
+}
+.bp-balance-tile .value {
+	font-size: 1.6rem;
+	font-weight: 700;
+	color: #fff;
+}
+
+/* Override Bootstrap toast container position to top-right */
+.bp-toast-stack {
+	position: fixed;
+	top: 1rem;
+	right: 1rem;
+	z-index: 1080;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	max-width: 360px;
+}
+
+
+/* Navbar */
+.bp-navbar {
+	background: rgba(13, 27, 42, 0.85);
+	backdrop-filter: blur(12px);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.bp-navbar .nav-link {
+	color: rgba(226, 232, 240, 0.75);
+}
+.bp-navbar .nav-link:hover,
+.bp-navbar .nav-link.active {
+	color: #fff;
+}
+.bp-navbar .navbar-brand {
+	color: #fff;
+}
+.bp-navbar .navbar-toggler {
+	border-color: rgba(255, 255, 255, 0.15);
+}
+.bp-navbar .navbar-toggler-icon {
+	filter: invert(1) brightness(1.8);
+}
+
+/* Modal tweaks */
+.modal.show.d-block {
+	background: transparent;
+}
+.modal-content.bp-card {
+	background: rgba(15, 23, 42, 0.95);
+}
+
+/* Auth pages */
+.bp-auth-wrap {
+	min-height: calc(100vh - 80px);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 2rem 1rem;
+}
+.bp-auth-card {
+	max-width: 460px;
+	width: 100%;
+}
+
+/* Transaction preview chips */
+.bp-tx-section {
+	padding: 1rem 0;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.bp-tx-section:last-of-type {
+	border-bottom: none;
+}
+.bp-tx-heading {
+	font-size: 0.95rem;
+	font-weight: 600;
+	color: #fff;
+	margin-bottom: 0.75rem;
+}
+.bp-chip {
+	display: inline-block;
+	background: rgba(124, 58, 237, 0.18);
+	border: 1px solid rgba(124, 58, 237, 0.35);
+	color: #f1f5f9;
+	padding: 0.15rem 0.55rem;
+	border-radius: 0.4rem;
+	word-break: break-all;
+	font-size: 0.8rem;
+}
+.bp-xdr-box {
+	background: rgba(15, 23, 42, 0.9);
+	border: 1px solid rgba(124, 58, 237, 0.35);
+	border-radius: 0.5rem;
+	padding: 0.75rem;
+	max-height: 180px;
+	overflow: auto;
+	color: #c4b5fd;
+}
